@@ -10,6 +10,7 @@ xcuserdata/
 ## Build output
 DerivedData/
 build/
+build.noindex/
 
 ## Obj-C/Swift specific
 *.hmap

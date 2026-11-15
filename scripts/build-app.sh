@@ -5,7 +5,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 INSTALL_DIR="${1:-$HOME/Applications}"
-DERIVED="$REPO_ROOT/build"
+DERIVED="$REPO_ROOT/build.noindex"
 APP_NAME="pm3kit.app"
 
 cd "$REPO_ROOT"
