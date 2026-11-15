@@ -1,0 +1,55 @@
+name: pm3kit
+options:
+  bundleIdPrefix: com.1a7a
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  minimumXcodeGenVersion: "2.40.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  pm3kit:
+    type: application
+    platform: macOS
+    sources:
+      - path: pm3kit
+        excludes:
+          - README.md
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.1a7a.pm3kit
+        PRODUCT_NAME: pm3kit
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_NSHumanReadableCopyright: ""
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: NO
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_ENTITLEMENTS: ""
+        DEVELOPMENT_TEAM: ""
+        COMBINE_HIDPI_IMAGES: YES
+    scheme:
+      testTargets:
+        - pm3kitTests
+
+  pm3kitTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests
+    dependencies:
+      - target: pm3kit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.1a7a.pm3kit.tests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
