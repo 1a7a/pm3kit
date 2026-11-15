@@ -22,6 +22,7 @@ echo "==> Running tests"
 xcodebuild test \
     -project pm3kit.xcodeproj \
     -scheme pm3kit \
+    -destination 'platform=macOS,arch=arm64' \
     -derivedDataPath "$DERIVED" \
     -quiet
 
